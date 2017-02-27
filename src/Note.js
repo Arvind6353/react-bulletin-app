@@ -89,6 +89,7 @@ class Note extends Component {
   update(){
 	
 	this.setState({editing:false});
+
 	this.props.onUpdate(this.refs.noteText.value, this.props.id);
 
 

@@ -52,7 +52,7 @@ class Board extends Component {
           { this.state.notes.map((note,i)=> 
 
 
-              <Note key={note.id} id={note.id} onUpdate={this.edit} onRemove={this.remove}> {note.text}</Note> )
+              <Note key={note.id} id={note.id} onUpdate={this.edit} onRemove={this.remove}>{note.text}</Note> )
 
 
           }
