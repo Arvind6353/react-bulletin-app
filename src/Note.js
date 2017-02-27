@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Draggable from 'react-draggable'; 
+import { Button } from 'react-bootstrap';
 
 
 class Note extends Component {
@@ -26,7 +26,7 @@ class Note extends Component {
     componentWillMount() {
         this.style = {
             right: this.randomBetween(0, window.innerWidth - 150) + 'px',
-            top: this.randomBetween(0, window.innerHeight - 150) + 'px',
+            top: this.randomBetween(33, window.innerHeight - 150) + 'px',
             transform: 'rotate(' + this.randomBetween(-5, 5) + 'deg)'
         };
     }
@@ -41,8 +41,9 @@ class Note extends Component {
 	     	<div className="note" style={this.style} >
 
 
-	     		<textarea  ref="noteText" className="form-control" defaultValue={this.props.children}></textarea>
-	     		<button onClick={this.update}> Update</button>
+	  	   		<textarea  ref="noteText" className="form-control" defaultValue={this.props.children}></textarea>
+	     		
+	     		<Button bsStyle="primary" onClick={this.update}> Update</Button>
 
 	     	</div>
 		)
@@ -54,8 +55,10 @@ class Note extends Component {
       		<div className="note"  style={this.style} >
 	      		<h3>{this.props.children}</h3>
 
-	      		<button onClick={this.edit}>Edit</button>
-	      		<button onClick={this.remove}>X</button>
+	      		<Button bsStyle="warning"onClick={this.edit}>Edit</Button>
+	      		<Button bsStyle="danger"onClick={this.remove}>X</Button>
+
+	      		
       		</div>
       	)	
     }
